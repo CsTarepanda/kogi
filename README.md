@@ -1,1 +1,1 @@
-# tut kogi ctarekogi
+# tut kogi
