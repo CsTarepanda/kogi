@@ -52,12 +52,12 @@ class Sample01{
 |- height: double                     |
 |~ weight: int                        |
 |~ count: int                         |
-|  -----                              |
+|  ~~~~~                              |
 +-------------------------------------+
 |+ setName(java.lang.String): void    |
 |- hello(): void                      |
 |+ getCount(): int                    |
-|  ----------                         |
+|  ~~~~~~~~~~                         |
 +-------------------------------------+
 `
 
