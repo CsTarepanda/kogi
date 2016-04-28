@@ -1,3 +1,4 @@
+import java.util.*;
 public class Kadai03{
 	public static void main(String[] args){
     String[] strs = new String[4];
@@ -15,6 +16,6 @@ public class Kadai03{
     System.out.println(index);
     System.out.println(strs[1].substring(strs[1].indexOf("m"), strs[1].indexOf("i") + 1));
     System.out.println(Integer.parseInt(strs[2].split(" ")[3]) * 1.08);
-    System.out.printf("%s　の　index　は　%d\n", strs[3], 3);
+    System.out.printf("%s　の　index　は　%d\n", strs[3], Arrays.asList(strs).indexOf(strs[3]));
 	}
 }
