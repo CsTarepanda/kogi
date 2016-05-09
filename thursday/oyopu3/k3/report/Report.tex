@@ -1,0 +1,71 @@
+\documentclass[uplatex]{jsarticle}
+
+\usepackage{mylatex}
+\usepackage{ap3}
+\usepackage{ascmac}
+
+\title{応用プログラミングⅢ [Q2] レポート}
+\author{C0115114 菅野路哉}
+\date{2016年5月7月}
+
+\usepackage[dvipdfmx]{graphicx}
+\begin{document}
+\maketitle
+% --- main content ---
+
+\section{第3回 課題2}
+\pgref{kadai}のようなファイルから{\tt Iterator}パターンを使ってデータを1つ1つ読み取り、出力するプログラムを作成する。
+
+ファイルから学籍番号を取り出すクラスは{\tt StudentDirectory}, そのイテレータに相当するクラスは{\tt StudentDirectoryIterator}という名前にする。
+\lstinputlisting[
+  caption=入力データが記録されたファイル,
+  label=kadai,
+  numbers=none
+]{./en03/data.txt}
+
+
+\section{ソースコード}
+\subsection*{{\tt Aggregate}実装}
+\lstinputlisting[
+  caption=StudentDirectory.java,
+  label=src1,
+  language=Java
+]{./en03/StudentDirectory.java}
+
+\subsection*{{\tt Iterator}実装}
+\lstinputlisting[
+  caption=StudentDirectoryIterator.java,
+  label=src2,
+  language=Java
+]{./en03/StudentDirectoryIterator.java}
+
+\subsection*{実行ファイル}
+\lstinputlisting[
+  caption=Main.java,
+  label=src3,
+  language=java
+]{./en03/Main.java}
+
+\section{実行結果}
+\lstinputlisting[
+  caption=実行結果,
+  label=result,
+  numbers=none
+]{./en03/result.txt}
+
+
+\section{解説}
+\pgref{src1}では、{\tt Iterable interface}に対して実装を行った。
+{\tt Iterable}は{\tt Aggregate}に相当する。
+コンストラクターでファイル名を受け取り、そのファイルを一行ずつ読み込む。
+読み込んだデータを、{\tt List}である{\tt students}に記録していく。
+データ件数は{\tt length}に記録する。
+
+
+\pgref{src2}では、{\tt Iterator interface}に対して実装を行った。
+{\tt hasNext}では、データ件数である{\tt StudentDirectory}のデータ件数と現在のインデックスを比較し、データが残っているかを判別する。
+{\tt next}では、{\tt StudentDirectory}から{\tt getStudentAt}を使い、引数番目のデータを受け取る。
+
+% --- main content ---
+\end{document}
+
