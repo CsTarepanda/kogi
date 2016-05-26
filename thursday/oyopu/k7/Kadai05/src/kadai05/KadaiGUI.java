@@ -101,12 +101,12 @@ public class KadaiGUI extends javax.swing.JFrame {
 		Integer aum = null, mnum = null;
 		try{
 			aum = Integer.parseInt(arnum.getText());
-			mnum = Integer.parseInt(maxnum.getText());
+			mnum = Integer.parseInt(maxnum.getText()) + 1;
 		}catch(NumberFormatException e){
 			area.append("要素数や最大値には正の整数を入れてください\n");
 		}
 		try{
-			for (int i = 0; i < aum; i++) area.append(String.format("%d ", rdm.nextInt(mnum)));
+			for (int i = 0; i < aum; i++) area.append(rdm.nextInt(mnum) + " ");
 			area.append("\n");
 		}catch(IllegalArgumentException e){
 			area.append("最大値には正の整数を入れてください\n");
