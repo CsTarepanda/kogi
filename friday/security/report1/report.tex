@@ -4,7 +4,7 @@
 \usepackage{ap3}
 \usepackage{ascmac}
 
-\title{情報セキュリティreport1}
+\title{情報セキュリティ　第一回レポート}
 \author{C0115114 菅野路哉}
 \date{6月1日}
 
@@ -14,14 +14,22 @@
 % --- main content ---
 
 \section{平文}
-学籍番号から今回用いる平文を求める。平文は、学籍番号を2進数に直したものを3つ並べ、64bitで0埋めしたものである。\\
+学籍番号から今回用いる平文を求める。平文は、学籍番号の数字部を2進数に直したものを3つ並べ、64bitで0埋めしたものである。\\
 平文
 0000000000000111000001101010101110000011010101011100000110101010
 
 
-次に、{\tt test}を使用して平文の転置を行う。\\
+次に、\figref{figs0}を使用して平文の転置を行う。\\
 初期転置後の平文
 0110000000100000001001100111101011011000100010001000100010011110
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.5\linewidth]{syoki.eps}
+    \caption{転置表}
+    \label{figs0}
+  \end{center}
+\end{figure}
 
 
 さらに、転置された平文を32bitずつに分割する。\\
@@ -37,23 +45,25 @@
 1001111101010101010100000110100010110010100111101110101000111001
 
 
-{\tt test}を使用して鍵の縮約転置を行う。\\
+\figref{figs1}を使用して鍵の縮約転置を行う。\\
 転置後の鍵
 01110001010011101101100010110111000100100011111010010111
+
+\newpage
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.5\linewidth]{pc1.eps}
+    \caption{転置表}
+    \label{figs1}
+  \end{center}
+\end{figure}
 
 
 さらに、転置された鍵を28bitずつに分割する。\\
 転置後分解\\
 左 0111000101001110110110001011\\
 右 0111000100100011111010010111
-
-% \begin{figure}[h]
-%   \begin{center}
-%     \includegraphics{syoki.png}
-%     \caption{初期転置}
-%     \label{figs}
-%   \end{center}
-% \end{figure}
 
 分割された鍵をそれぞれ回転左シフトし、再結合する。\\
 回転左シフトされた値\\
@@ -64,18 +74,55 @@
 
 % ここにsyoki2.png
 
-再結合された鍵を、{\tt test}を使用して転置を行う。また、これを拡大鍵とする。\\
+再結合された鍵を、\figref{figs2}を使用して転置を行う。また、これを拡大鍵とする。\\
 拡大鍵
 110110100000011010111111001001101101100001110010
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.5\linewidth]{pc2.eps}
+    \caption{転置表}
+    \label{figs2}
+  \end{center}
+\end{figure}
 
 \section{関数F}
 
 分割された平文の右側と、拡大鍵を使用して関数Fの結果を求める。
-初めに、分割された平文の右側を{\tt test}を使用して拡大転置を行う。
-その後、転置された平文と拡大鍵の排他的論理和を求める。求めたビット列を{\tt test}のSBOXを参照して変換する。\\
-平文右   11011 0001 0001 0001 0001 0001 0011 110
+初めに、分割された平文の右側を\figref{figs3}を使用して拡大転置を行う。
+その後、転置された平文と拡大鍵の排他的論理和を求める。求めたビット列を\figref{figs4}、\figref{figs5}のSBOXを参照して変換する。\\
+SBOXによる変換は、6bitに分割された値をそれぞれSXの表に当てはめて計算する。分割されたbit列の外側のbitを取り、それを結合した値を行数、内側の値を列数にSBOXの値を参照する。
 
+\newpage
 
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.5\linewidth]{kakue.eps}
+    \caption{転置表}
+    \label{figs3}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.5\linewidth]{sb1.eps}
+    \caption{SBOX表(S1～S4)}
+    \label{figs4}
+  \end{center}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.5\linewidth]{sb2.eps}
+    \caption{SBOX表(S5～S8)}
+    \label{figs5}
+  \end{center}
+\end{figure}
+
+平文右
+11011 0001 0001 0001 0001 0001 0011 110\\
 転置された平文
 011011 110001 010001 010001 010001 010001 010011 111101\\
 拡大鍵
@@ -97,14 +144,23 @@ SBOXで求めた数値をそれぞれ二進数に変換する。\\
 0001 1100 0100 1101 1101 1011 1111 0100
 
 
-この値をさらに{\tt test}で転置を行った値が関数Fの値となる。\\
+この値をさらに\figref{figs6}で転置を行った値が関数Fの値となる。\\
 関数Fの値
 10110011001111010011010001110011
 
+\newpage
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.5\linewidth]{tenp.eps}
+    \caption{転置表}
+    \label{figs6}
+  \end{center}
+\end{figure}
+
+
 \section{最終値}
-最後に、関数Fで求めた数値と、分割された平文の左側の排他的論理和を求める。
-
-
+最後に、関数Fで求めた数値と、分割された平文の左側の排他的論理和を求める。\\
 平文左
 01100000001000000010011001111010\\
 関数F
