@@ -1,0 +1,329 @@
+This is e-upTeX, Version 3.14159265-p3.5-u1.11-130605-2.6 (utf8.uptex) (TeX Live 2014) (preloaded format=uplatex 2015.3.1)  22 JUN 2016 22:23
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**TEST.tex
+(./TEST.tex
+pLaTeX2e <2011/05/07u00>+0 (based on LaTeX2e <2014/05/01> patch level 0)
+Babel <3.9l> and hyphenation patterns for 4 languages loaded.
+(/usr/local/texlive/2014/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+Document Class: jsarticle 2014/02/07 okumura
+LaTeX Info: Redefining \rmfamily on input line 352.
+LaTeX Info: Redefining \sffamily on input line 355.
+LaTeX Info: Redefining \ttfamily on input line 358.
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY2/mc/m/n --> JY2/gt/m/n on input line 423.
+LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 613.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 613.
+\fullwidth=\dimen118
+LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 760.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 760.
+\c@part=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\@abstractbox=\box41
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\js@tocl@width=\dimen119
+\@lnumwidth=\dimen120
+\bibindent=\dimen121
+LaTeX Info: Redefining \TeX on input line 1731.
+LaTeX Info: Redefining \LaTeX on input line 1757.
+LaTeX Info: Redefining \LaTeXe on input line 1782.
+\heisei=\count89
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen122
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen123
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box42
+\strutbox@=\box43
+\big@size=\dimen124
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks16
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks17
+\eqnshift@=\dimen125
+\alignsep@=\dimen126
+\tagshift@=\dimen127
+\tagwidth@=\dimen128
+\totwidth@=\dimen129
+\lineht@=\dimen130
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvipdfmx.def on input line 91.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/dvipdfmx-def/dvipdfmx.def
+File: dvipdfmx.def 2014/07/25 v4.03 LaTeX color/graphics driver for dvipdfmx (T
+eX Live/ChoF)
+))
+\Gin@req@height=\dimen131
+\Gin@req@width=\dimen132
+)
+(./TEST.aux)
+\openout1 = `TEST.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
+(Font)              scaled to size 15.9785pt on input line 12.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 15.9785pt on input line 12.
+LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 12.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 12.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 5.5481pt on input line 12.
+LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
+(Font)              scaled to size 13.31541pt on input line 15.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 13.31541pt on input line 15.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 13.31541pt on input line 15.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 13.31541pt on input line 15.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 22.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 22.
+ [1
+
+] [2] [3]
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 157.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 157.
+ [4] [5] [6] [7] [8] [9]
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 174512195630198453245429325042176941867144848304416
+0735096515518903723865122976615628 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 980758539441715307239312806737034413293354047470818
+3331242417216238928121991128579833 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 551186299166244002668493797386213340270864974678599
+9032158238475526277604559014261866 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 309766700131429129499693514131051897232226115769373
+1456072930023245768013762166015169 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 174088885473863170778827754941651166244511077062387
+7078312986673064121623734337300525 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 978379536363111019777011982772079554294152253090618
+9180118985102620363525386975628950 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 549849299436068393114680734317908709513313566236927
+8319226869627672644301267480303470 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 309015306283070436930450572686664694746482224225153
+4415405500730752026097312323930550 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 173666602131085585554913221849905558447523010014536
+2341457891410682638666689526048969 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 976006303976700990818612306796469238475079316281693
+6358993349728036429306795136395207 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 548515542834905956840060116419615712022994575750311
+8233754262547156473270418866654106 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 308265735073217147744113785427824030156922951571675
+2447369895551501937977975403059607 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 173245343111148037032191947410437104948190698783281
+4875421881299944089143622176519499 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 973638828284651968120918744446656529808831727162041
+9599870972905685780987156632039587 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 547185021495974406083956334379020969752563430665067
+5815127486772995408914782027206248 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 307517982080737616219183459921009785000940648033767
+9808101647566423419810107499289911 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 172825105929374540315181104475607499170528644194977
+6052153125932329961933280414600930 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 971277095323084916571317807152914145338370980375774
+1413100567739694386065035930057228 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 545857727571573723113080607619937749680164490971185
+0674162519069708244968550192692162 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 306772042895224432389551301482405015320252443925806
+0078879335717176033672325208292995 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 172405888107116131002927831433111618609981873486302
+9764330186673052930923846767060663 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 968921091161992656236454412654087296588098128993022
+7275535649102557471792018830880927 
+ []
+
+
+Overfull \hbox (7.60135pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 562[]$ = 544533653233039872804887379911597060682511148494078
+7728851034795637299147114582955081 
+ []
+
+
+Overfull \hbox (36.90701pt too wide) in paragraph at lines 411--466
+[]$\OT1/cmr/m/n/10 544533653233039872804887379911597060682511148494078772885103
+47956372991471145829550813442585871319[] 
+ []
+
+[10] [11] [12] (./TEST.aux) ) 
+Here is how much of TeX's memory you used:
+ 1345 strings out of 495201
+ 15457 string characters out of 6184745
+ 96531 words of memory out of 5000000
+ 4735 multiletter control sequences out of 15000+600000
+ 13318 words of font info for 66 fonts, out of 8000000 for 9000
+ 41 hyphenation exceptions out of 8191
+ 27i,8n,21p,292b,324s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on TEST.dvi (12 pages, 20848 bytes).

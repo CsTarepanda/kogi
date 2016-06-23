@@ -1,0 +1,111 @@
+\documentclass[uplatex]{jsarticle}
+
+\usepackage{mylatex}
+\usepackage{ap3}
+\usepackage{ascmac}
+
+\title{応用プログラミングⅢ [Q2] 中間課題}
+\author{c0115114 菅野 路哉}
+\date{2016年06月19日}
+
+\usepackage[dvipdfmx]{graphicx}
+\begin{document}
+\maketitle
+% --- main content ---
+
+\section{目的}
+古いSingleton実装の問題点を知り、問題点を補ったSingleton実装を行えるようにする。また、何故そのような問題が起きるのかを考察する。
+
+
+\section{課題設定}
+今回のレポートでは、課題2.1を選択する。古いSingleton実装であるOldSingleton.javaでは、Singletonのインスタンスが複数生成されてしまう場合が存在する。そのため、何故そのような事が起きるのか、それを防ぐにはどうしたら良いのかを考察する。考察には、OldMain.javaの実行結果と、OldSingleton.javaに修正を加えたNewSingleton.javaを用いたNewMain.javaの実行結果を用いる。
+
+また、今回使用するOldSingleton.javaと、OldMain.javaは既に用意されているものを用いる。
+
+
+\section{ソースコード}
+\subsection{OldSingleton}
+\lstinputlisting[
+  caption=OldSingleton.java,
+  label=src1,
+  language=Java
+]{./kg07/OldSingleton.java}
+
+\subsection{OldMain}
+\lstinputlisting[
+  caption=OldMain.java,
+  label=src2,
+  language=Java
+]{./kg07/OldMain.java}
+
+\subsection{NewSingleton}
+\lstinputlisting[
+  caption=NewSingleton.java,
+  label=src3,
+  language=Java
+]{./kg07/NewSingleton.java}
+
+\newpage
+\subsection{NewMain}
+\lstinputlisting[
+  caption=NewMain.java,
+  label=src4,
+  language=Java
+]{./kg07/NewMain.java}
+
+\section{実行結果}
+\lstinputlisting[
+  caption=OldMain.javaの実行結果,
+  label=result,
+  numbers=none
+]{./kg07/old.result}
+
+\lstinputlisting[
+  caption=NewMain.javaの実行結果,
+  label=result2,
+  numbers=none
+]{./kg07/new.result}
+
+\section{解説}
+挙動説明を簡易化するために、Singletonのインスタンス生成時にかかる時間を延ばす。そのため、コンストラクタ内で一秒停止している。また、インスタンスが生成された場合、「インスタンスを作成しました」のメッセージが出るようにしている。
+
+\pgref{src1}では、古いSingleton実装が定義されている。
+インスタンスの取得はgetInstanceメソッドを用いる。
+getInstanceでは、自身のフィールドであるsingletonがnullだった場合、新しくOldSingletonインスタンスを生成し、singletonに代入する。
+また、そのsingletonを戻り値とする。
+
+
+\pgref{src2}では、古いSingletonを用いて、マルチスレッドによるSingletonのインスタンス参照を行う。
+2つのサブスレッドを作成して、順次スレッドを実行する。
+スレッド内では、OldSingletonのgetInstanceを呼び出し、取得したインスタンスのObjectIDを確認する。
+それぞれのスレッドで異なったObjectIDが検出された場合、同一のインスタンスが取得出来ていない事が分かる。
+
+
+\pgref{src3}では、改良したSingleton実装を定義した。
+インスタンスの取得は、OldSingletonの場合と同様のgetInstanceメソッドを用いるが、修飾子にsynchronizedを付与して、並列実行が行われないようにする。
+他の実装は、OldSingletonと変わらない。
+
+
+\pgref{src4}では、OldSingletonの代わりにNewSingletonを用いて、OldMainと同様の処理を行う。
+
+
+\section{考察・まとめ}
+\pgref{result}では、「インスタンスを生成しました」のメッセージが2度出ている。
+また、ObjectIDがそれぞれ異なっている。
+以上の事から、それぞれのスレッドで参照しているSingletonインスタンスは別物である事が分かる。
+これは、それぞれのスレッドから、getInstanceメソッドを同時に呼び出している事が原因である。
+getInstanceメソッドでは、既存のインスタンスが作成されていない場合、インスタンスを生成する。
+この時、インスタンス生成途中でgetInstanceメソッドが呼び出されると、既存のインスタンスは未だ無いため、追加でインスタンスを生成し始める。
+そのため、OldSingletonでは複数のインスタンスが存在することになる。
+
+\pgref{result2}では、「インスタンスを生成しました」のメッセージが1度出ている。
+また、ObjectIDがそれぞれ一致している。
+以上の事から、それぞれのスレッドで参照しているSingletonインスタンスは同一であることが分かる。
+
+NewSingletonでは、OldSingletonで複数のインスタンスが生成される問題に対して、synchronized修飾子をgetInstanceメソッドに付与することで対策している。
+synchronized修飾子は、そのブロックに対して処理が始まった際にロックを行い、別の場所からのアクセス要求があった場合、現在行っている処理が完了するまで待機させる。
+そのため、今回の場合、インスタンス生成時にgetInstanceメソッドが呼び出されることが無くなり、インスタンスが1つに定まる。
+
+% --- main content ---
+\end{document}
+

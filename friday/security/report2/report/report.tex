@@ -1,0 +1,88 @@
+\documentclass[uplatex]{jsarticle}
+
+\usepackage{amsmath}
+
+\title{情報セキュリティーRSA暗号}
+\author{c0<gakuseki> 名前}
+\date{2016年06月18日}
+
+\allowdisplaybreaks
+\usepackage[dvipdfmx]{graphicx}
+\begin{document}
+\maketitle
+% --- main content ---
+
+\section{平文}
+自分の学籍番号を用いて平文を求める。
+
+初めに、十分に大きい素数であるpとqを自由に決定する。
+今回、pとqは19, 31を用いる。
+
+次に、pとqを掛けた値をnとし、学籍番号(<gakuseki>)をn - 2で割った余りに2を足したものを平文とする。また、nは公開鍵の1つである。
+\begin{align*}
+  p&=19\\
+  q&=31\\
+  n&=p \times q = 19 \times 31 = <n>\\
+  平文&=(115114 \bmod (n - 2)) + 2 = (<gakuseki> \bmod <n>) + 2 = <m>
+\end{align*}
+n: <n>\\
+平文: <m>
+
+
+\section{秘密鍵生成}
+p - 1とq - 1の最小公倍数を求める。求めた最小公倍数を$\lambda$(n)とする。導いた$\lambda$(n)を用いて公開鍵の1つであるeを求める。eが0以上$\lambda$(n)未満かつ、$\lambda$(n)とeの最小公約数が1となるようにeを定める。
+
+\begin{align*}
+  \lambda(n)&= LCM(p - 1, q- 1)\\
+  p - 1&= 18 = <pfac18>\\
+  q - 1&= 30 = <pfac30>\\
+  \lambda(n)&= <pfaclast> = 90\\\\
+  GCD(e, \lambda(n))&= 1\\
+  <gcdlist>
+\end{align*}
+$\lambda(n)$: <ln>\\
+eの候補: <es>\\
+e: <e>
+
+導いた$\lambda$(n)を用いて秘密鍵dを求める。dを求める式を以下に示す。
+\begin{align*}
+  d = \frac{1}{e} \bmod \{\lambda(n)\}
+\end{align*}
+
+式を変形して、$(d \times e - 1) \bmod \lambda(n) = 0$となるようにdを決定する。
+\begin{align*}
+  (d \times e - 1) \bmod \lambda(n)&= 0\\
+  (<d> \times <e> - 1) \bmod <ln>&= 0\\
+  <de> \bmod <ln> &=0
+\end{align*}
+
+
+
+\section{暗号化}
+暗号文cを求める。暗号文は$c = m^e \bmod n$で求める。\\
+公開鍵 e: <e>, n: <n>\\
+平文 m: <m>
+
+$m^e = <m>^{<e>}$
+\begin{verbatim}
+<hsk>
+\end{verbatim}
+
+$<me> \bmod n\\
+= <me> \bmod <n>$
+\begin{verbatim}
+<hsd>
+\end{verbatim}
+
+暗号: <c>
+
+よって、暗号文<c>が導かれた。また、復号の確認も行う。復号は、$m = c^d \bmod n$によって確認できる。\\
+<ruizyo>
+復号: <hukugo>
+
+初めに求めた平文と同じ結果が得られたため、復号が正しく行われた。
+
+
+% --- main content ---
+\end{document}
+

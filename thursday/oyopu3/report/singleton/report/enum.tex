@@ -1,0 +1,79 @@
+\documentclass[uplatex]{jsarticle}
+
+\usepackage{mylatex}
+\usepackage{ap3}
+\usepackage{ascmac}
+
+\title{応用プログラミングⅢ [Q2] 中間課題}
+\author{c0115114 菅野 路哉}
+\date{2016年06月19日}
+
+\usepackage[dvipdfmx]{graphicx}
+\begin{document}
+\maketitle
+% --- main content ---
+
+\section{目的}
+最新のSingleton実装を知り、古いSingletonよりも優れている点を調査する。
+
+
+\section{課題設定}
+今回のレポートでは、課題2.2を選択する。講義内で実装したSingletonは、クラス変数にインスタンスを持たせ、コンストラクタをprivateにしてアクセス制限をかけることで、インスタンスの唯一性を保った。しかし、これは1世代前の実装方法であるため、最新のSingleton実装を調査して実装する。また、最新のSingleton実装では、何が以前のSingleton実装よりも優れているのかを考察する。
+
+
+\section{ソースコード}
+\subsection{Singleton}
+\lstinputlisting[
+  caption=Singleton.java,
+  label=src1,
+  language=Java
+]{./singleton/Singleton.java}
+
+\newpage
+\subsection{Main}
+\lstinputlisting[
+  caption=Main.java,
+  label=src2,
+  language=Java
+]{./singleton/Main.java}
+
+\section{実行結果}
+\lstinputlisting[
+  caption=Main.javaの実行結果,
+  label=result,
+  numbers=none
+]{./singleton/result}
+
+\section{解説}
+\pgref{src1}では、最新のSingleton実装が定義されている。
+enumを用いて、クラスの定義を行う。
+シングルトンの実体であるインスタンスは、SingletonクラスのINSTANCEフィールドとなっている。
+enumで宣言したクラスのインスタンスは、enum内で列挙されたもの以外作成出来ないことが保証されている。
+また、列挙されたインスタンスは、それぞれ定数であるために書き換えも出来ない。
+そのため、シングルトンである事が分かる。
+
+
+\pgref{src2}では、実装したシングルトンを使用する。
+また、使用するコードは、課題2.1に使用されているOldMain.javaとほぼ同じであり、使用するシングルトンクラスの変更、ObjectIDの表示部分の変更を行った。
+使用するシングルトンクラスは、今回作成したSingletonである。
+ObjectID部分の変更は、enumによって列挙されたインスタンスを表示する際に、インスタンスの変数名が表示されるためである。そのため、インスタンスのハッシュ値を表示して同一のObjectであるかを確認するために、hashCodeメソッドを用いた。
+
+
+\section{考察・まとめ}
+\pgref{result}では、「インスタンスを生成しました」のメッセージが1度出ている。
+ここで、「START」の表示よりも「インスタンスを生成しました」のメッセージが後ろに表示されていることから、クラスを読み込んだタイミングでインスタンスが生成されていない事が分かる。
+enumで列挙されたインスタンスは、列挙されたインスタンスが参照された際に、同クラス内の列挙されたインスタンス全てが初期化される。
+そのため、任意のタイミングでインスタンスを生成することができる。
+
+また、表示されたハッシュ値がそれぞれ一致している。
+そのため、それぞれのスレッドで参照しているSingletonインスタンスは同一であることが分かる。
+
+enumを用いてシングルトン実装を行うと、書くべき事が簡潔になる。これが、他のシングルトン実装と比べて最も大きなメリットであると考える。classを用いたシングルトン実装では、どのようなシングルトン実装でも行える。しかし、より厳密なシングルトン実装を行おうとすると処理すべき事項が多くなる。また、意図していないシングルトン実装が行われていても、エラーが出ないためそれに気づくことが難しくなる。enumを用いたシングルトン実装のように、書くべき事項が簡潔であれば、そういった意図していないバグを防ぐことが出来る。
+
+また、enumを用いたクラスは、JVMによってシングルトンであることが保証されているため、実装したものがシングルトン実装であることを明記できる。
+
+しかし、enumによるシングルトン実装にはデメリットも存在する。処理によって生成するインスタンスを変更できない点である。生成するインスタンスは、予め列挙しておく必要があるため、生成されるインスタンスはソースコード記述の際に定まってしまう。そのため処理途中にインスタンスを動的に決定したい場合は、この方法を用いることは出来ない。
+
+% --- main content ---
+\end{document}
+
