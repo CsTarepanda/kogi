@@ -1,11 +1,14 @@
 import java.util.*;
 public class Kadai05{
-	public static void main(String[] args){
+  static {
     String sen = "An eye for an eye, a tooth for a tooth.";
-    System.out.println(sen);
-    Map<String, Integer> map = new TreeMap<String, Integer>();
-    for(String s: Arrays.asList(sen.toLowerCase().replaceAll("[,.]", "").split(" ")))
-      if(map.putIfAbsent(s, 1) != null) map.put(s, map.get(s) + 1);
-    map.entrySet().forEach(e -> System.out.printf("%-10s: %d\n", e.getKey(), e.getValue()));
-	}
+    new TreeMap<String, Integer>(){{
+      System.out.println(sen);
+      for(String s: sen.toLowerCase().replaceAll("[,.]", "").split(" "))
+        if(putIfAbsent(s, 1) != null) put(s, get(s) + 1);
+      entrySet().forEach(e -> System.out.printf("%-10s: %d\n", e.getKey(), e.getValue()));
+    }};
+  }
+
+	public static void main(String[] args){}
 }
