@@ -5,7 +5,7 @@ public class Kadai05{
     System.out.println(sen);
     Map<String, Integer> map = new TreeMap<String, Integer>();
     for(String s: Arrays.asList(sen.toLowerCase().replaceAll("[,.]", "").split(" ")))
-      map.put(s, map.get(s) == null ? 1 : map.get(s) + 1);
+      if(map.putIfAbsent(s, 1) != null) map.put(s, map.get(s) + 1);
     map.entrySet().forEach(e -> System.out.printf("%-10s: %d\n", e.getKey(), e.getValue()));
 	}
 }
